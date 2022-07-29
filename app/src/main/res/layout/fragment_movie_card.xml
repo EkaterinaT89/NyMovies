@@ -1,0 +1,173 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:padding="@dimen/padding"
+    tools:context=".presentation.ui.MovieCardFragment">
+
+    <ImageView
+        android:id="@+id/movie_image"
+        android:layout_width="210dp"
+        android:layout_height="140dp"
+        android:contentDescription="@string/movie_image"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/display_title"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:gravity="center"
+        android:textColor="?attr/textFillColor"
+        android:textSize="@dimen/title_text_size"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/movie_image" />
+
+    <TextView
+        android:id="@+id/byline"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:gravity="center"
+        android:textColor="?attr/textFillColor"
+        android:textSize="15sp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/display_title" />
+
+    <TextView
+        android:id="@+id/publication_date"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:gravity="center"
+        android:textColor="?attr/textFillColor"
+        android:textSize="15sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/display_title" />
+
+    <TextView
+        android:id="@+id/head_line"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:gravity="center"
+        android:textColor="?attr/textFillColor"
+        android:textSize="15sp"
+        app:layout_constraintStart_toStartOf="@id/byline"
+        app:layout_constraintTop_toBottomOf="@id/byline" />
+
+    <TextView
+        android:id="@+id/suggested_link_text"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:gravity="center"
+        android:textColor="?attr/textFillColor"
+        android:textSize="11sp"
+        app:layout_constraintStart_toStartOf="@id/head_line"
+        app:layout_constraintTop_toBottomOf="@id/head_line" />
+
+    <TextView
+        android:id="@+id/url_for_article"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="5dp"
+        android:autoLink="web"
+        android:gravity="center"
+        android:textColor="?attr/textFillColor"
+        android:textSize="11sp"
+        app:layout_constraintStart_toStartOf="@id/suggested_link_text"
+        app:layout_constraintTop_toBottomOf="@id/suggested_link_text" />
+
+    <TextView
+        android:id="@+id/summary_short"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:textColor="?attr/textFillColor"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/url_for_article" />
+
+    <androidx.appcompat.widget.LinearLayoutCompat
+        android:id="@+id/raiting"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="@dimen/padding"
+        android:orientation="horizontal"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/summary_short">
+
+        <ImageView
+            android:id="@+id/star_image"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:contentDescription="@string/star_image"
+            android:src="@drawable/ic_star" />
+
+        <TextView
+            android:id="@+id/mpaa_rating"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="start|center"
+            android:layout_marginStart="10dp" />
+
+        <ImageView
+            android:id="@+id/critics_image"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginStart="15dp"
+            android:contentDescription="@string/critics_image_description"
+            android:src="@drawable/ic_baseline_check_24" />
+
+        <TextView
+            android:id="@+id/critics_pick"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginStart="10dp" />
+
+    </androidx.appcompat.widget.LinearLayoutCompat>
+
+    <TextView
+        android:id="@+id/opening_date"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:autoLink="web"
+        android:gravity="center"
+        android:textColor="?attr/textFillColor"
+        android:textSize="11sp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/raiting" />
+
+    <TextView
+        android:id="@+id/date_updated"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:autoLink="web"
+        android:gravity="center"
+        android:textColor="?attr/textFillColor"
+        android:textSize="11sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/raiting" />
+
+    <com.google.android.material.divider.MaterialDivider
+        android:id="@+id/divider"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="@dimen/padding"
+        app:dividerColor="@color/green_light"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/date_updated" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
